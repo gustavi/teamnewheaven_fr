@@ -19,7 +19,7 @@ cache:
 install:
   - sudo apt-get update
   - sudo apt-get install unzip
-  - travis_retry pip install -r requirements.txt
+  - travis_retry pip install --upgrade -r requirements.txt
 
 script:
   # fix zinnia django 1.7  
