@@ -25,7 +25,7 @@ script:
   # fix zinnia django 1.7  
   - wget -c https://github.com/Fantomas42/django-blog-zinnia/archive/feature/django-1.7.zip
   - unzip django-1.7.zip
-  - cd 
+  - cd django-blog-zinnia-feature-django-1.7
   - python setup.py install
   - cd ..
 
