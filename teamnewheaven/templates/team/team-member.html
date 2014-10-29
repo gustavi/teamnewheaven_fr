@@ -1,0 +1,49 @@
+{% extends "_base.html" %}
+
+{% load i18n thumbnail %}
+
+
+{% block title %}{{ member }} &#183; {% trans "La Team" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li><a href="{% url 'team-list' %}">{% trans "La Team" %}</a></li>
+<li class="unavailable">{{ member }}</li>
+{% endblock %}
+
+
+{% block content %}
+<h1 class="text-center">
+    {{ member }}
+    <br/>
+    <small><em>{{ member.description }}</em></small>
+</h1>
+<hr>
+<div class="row">
+    <div class="large-6 columns text-center">
+        <img src="{{ member.avatar|thumbnail_url:'member_avatar_big' }}" alt="{{ member.name }}">
+    </div>
+    <div class="large-6 columns">
+        <div class="row">
+            <div class="panel">
+                <h3 class="text-center">{% trans "Biographie" %}</h3>
+                {% if member.biography %}
+                    {{ member.biography|linebreaks }}
+                {% else %}
+                    {% trans "Biographie à venir." %}
+                {% endif %}
+                {% if member.twitter or member.website %}
+                    <h3 class="text-center">{% trans "Social" %}</h3>
+                    {% if member.twitter %}
+                        <b>{% trans "Twitter" %} :</b> <a href="https://twitter.com/{{ member.twitter }}">@{{ member.twitter }}</a>
+                        <br/>
+                    {% endif %}
+                    {% if member.website %}
+                        <b>{% trans "Site web" %} :</b> <a href="http://{{ member.website }}">{{ member.website }}</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

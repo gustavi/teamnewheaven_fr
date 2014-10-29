@@ -1,0 +1,42 @@
+{% load i18n %}
+
+ <div class="large-8 columns">
+    <div class="panel radius">
+        <h3 class="text-center">{% trans "Dernières news" %}</h3>
+        <hr>
+        <div class="row">
+            {% for entry in entries %}
+                <div class="medium-6 small-12 columns">
+                    <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">
+                        <h4>{{ entry.title }}</h4>
+                    </a>
+                    <hr>
+                    <div class="entry-image">
+                        {% if entry.image %}
+                            <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}" rel="bookmark">
+                                <img src="{{ entry.image.url }}" alt="{{ entry.title }}" class="left th" />
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="medium-6 small-12 columns">
+                    <p>
+                        {{ entry.html_content|safe|truncatewords:42 }}
+                        <a href="{{ entry.get_absolute_url }}"
+                            class="button secondary tiny right">
+                            {% trans "Continue reading" %}
+                        </a>
+                    </p>
+                </div>
+                <hr>
+            {% empty %}
+                <p>
+                    {% trans "No entries yet." %}
+                </p>
+            {% endfor %}
+            <div class="text-center">
+                <a href="{% url 'zinnia:entry_archive_index' %}" class="button small secondary">{% trans "Toutes les news" %}</a>
+            </div>
+        </div>
+    </div>
+</div>

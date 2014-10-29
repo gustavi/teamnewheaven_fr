@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+
+{% load i18n thumbnail %}
+
+
+{% block title %}{% trans "Galerie" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li class="unavailable">{% trans "Galerie" %}</li>
+{% endblock %}
+
+
+{% block content %}
+<h1>{% trans "Galerie" %}</h1>
+<hr>
+{% for cat in categories %}
+    <div class="row">
+        <h2>{{ cat.0 }} <small>{{ cat.0.description }}</small></h2>
+        {% if cat.1 %}
+            {% for video in cat.1 %}
+            <div class="large-3 medium-6 small-12 columns left" style="margin-bottom: 20px">
+                <a href="{% url 'gallery-single' cat.0.slug %}#videos">
+                    <img src="https://i.ytimg.com/vi/{{ video.key }}/hqdefault.jpg" alt="{{ video.name }}" style="width: 100%">
+                </a>
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% if cat.2 %}
+            {% for image in cat.2 %}
+            <div class="large-3 medium-6 small-12 columns left" style="margin-bottom: 20px">
+                <a href="{% url 'gallery-single' cat.0.slug %}#images">
+                    <img src="{{ image.image|thumbnail_url:'gallery_index' }}">
+                </a>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <hr>
+{% endfor %}
+{% endblock %}

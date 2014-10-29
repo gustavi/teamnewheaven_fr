@@ -1,0 +1,45 @@
+{% load staticfiles i18n %}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>{% block title %}{% endblock %} &#183; Team NewHeaven</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="author" content="Team NewHeaven" />
+        <meta name="robots" content="follow, all" />
+        <meta name="description" content="Bienvenue sur le site de la Team NewHeaven, une équipe française d'architectes sur Minecraft." />
+        <meta name="keywords" content="minecratf,team,new heaven,cinematics,architect" />
+        {% block meta %}{% endblock %}
+        <link rel="stylesheet" href="{% static "css/normalize.css" %}">
+        <link rel="stylesheet" media="screen,projection" href="{% static "css/foundation.css" %}">
+        <link rel="stylesheet" href="{% static "css/foundation-icons.css" %}" />
+        <link rel="stylesheet" media="screen,projection" href="{% static "css/custom.css" %}">
+        {% block extracss %}{% endblock %}
+        <link rel="shortcut icon" type="image/png" href="{% static "img/favicon.ico" %}" />
+    </head>
+    <body>
+        <div id="wrapper">
+            {% include '_header.html' %}
+            {% if request.path != '/' %}
+                <div class="row">
+                    <div class="small-12 columns">
+                        <ul class="breadcrumbs">
+                            <li><a href="{% url "homepage" %}">{% trans "Accueil" %}</a></li>
+                            {% block breadcrumb %}{% endblock %}    
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+            <div id="main" class="row">
+                <div class="large-12 columns">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+            {% include '_links.html' %}
+            {% include '_footer.html' %}
+        </div>
+        {% include '_scripts.html' %}
+        {% block extrascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,100 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+
+{% block title %}{% trans "Contact" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li class="unavailable">{% trans "Contact" %}</li>
+{% endblock %}
+
+
+{% block content %}
+<h1>{% trans "Contact" %}</h1>
+<hr>
+{% if send %}
+    <div class="alert-box success">
+        {% trans "Votre message a bien été envoyé. Nous prendrons contact avec vous dans les plus brefs délais." %}
+    </div>
+{% endif %}
+<div class="alert-box alert">
+    {% blocktrans with application_url=TNH.forum.application %}
+        Pour toute demande de candidature merci d'utiliser le <b><a href="{{ application_url }}" style="color: #fff; text-decoration:underline;">forum dédié à cela</a></b>. Toute candidature par ce formulaire sera <b>ignorée</b>.
+    {% endblocktrans %}
+</div>
+<form action="{% url 'contact-index' %}" method="post" role="form" id="form-contact">
+    {% csrf_token %}
+    <fieldset>
+        <legend>{% trans "Informations personelles" %}</legend>
+        <div class="row">
+            <div class="small-12 medium-3 columns">
+                <label class="medium-text-right text-left inline">{% trans "Prénom" %} <small>{% trans "Obligatoire" %}</small></label>
+            </div>
+            <div class="small-12 medium-9 columns">
+                <div class="form-alert-box">
+                    {{ form.first_name.errors }}
+                </div>
+                <input id="id_first_name" maxlength="64" name="first_name" type="text" required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-3 columns">
+                <label class="medium-text-right text-left inline">{% trans "Nom" %} <small>{% trans "Obligatoire" %}</small></label>
+            </div>
+            <div class="small-12 medium-9 columns">
+                <div class= "form-alert-box">
+                    {{ form.last_name.errors }}
+                </div>
+                <input id="id_last_name" maxlength="64" name="last_name" type="text" required/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-3 columns">
+                <label class="medium-text-right text-left inline">{% trans "Addresse mail" %} <small>{% trans "Obligatoire" %}</small></label>
+            </div>
+            <div class="small-12 medium-9 columns">
+                <div class="form-alert-box">
+                    {{ form.email.errors }}
+                </div>
+                <input id="id_email" maxlength="254" name="email" type="email" required/>  
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-3 columns">
+                <label class="medium-text-right text-left inline">{% trans "M'abonner à la newsletter" %}</label>
+            </div>
+            <div class="small-12 medium-9 columns">
+                <div class="form-alert-box">
+                    {{ form.email.errors }}
+                </div>
+                <div class="switch radius">
+                    <input id="exampleCheckboxSwitch" type="checkbox" checked />
+                    <label for="exampleCheckboxSwitch"></label>
+                </div> 
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>{% trans "Message" %}</legend>
+        <div class="form-alert-box">
+            {{ form.message.errors }}
+        </div>
+        {{ form.message }}
+    </fieldset>
+    <fieldset>
+        <legend>{% trans "Captcha" %}</legend>
+        <div class="form-alert-box">
+            <label>{% trans "Afin de vérifier que vous n'êtes pas un robot, merci de rentrer la captcha suivant." %}</label>
+            {{ form.captcha.errors }}
+        </div>
+        <div class="large-2">
+            {{ form.captcha }}
+        </div>
+    </fieldset>
+    <div class="text-center"><br />
+        <button type="submit" class="button">{% trans "Envoyer" %}</button>
+    </div>
+</form>
+{% endblock %}

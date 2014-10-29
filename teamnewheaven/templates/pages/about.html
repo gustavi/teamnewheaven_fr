@@ -1,0 +1,51 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+
+{% block title %}{% trans "À propos" %}{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="large-12 columns">
+
+        <h2>{% trans "À propos" %}</h2>
+        <h4>{% trans "Réalisation" %}</h4>
+        <p>
+            Augustin LAVILLE - <a href="mailto:contact@gustavi.net">contact@gustavi.net</a> - <a href="http://www.gustavi.net?ref=pbgtag.fr">www.gustavi.net</a>
+        </p>
+        <h4>{% trans "Informations techniques" %}</h4>
+        <p>
+            {% trans "Ce site est propulsé par les outils suivants :" %}
+            <ul>
+                <li>
+                    <a href="https://www.python.org/">
+                        Python 3
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.djangoproject.com/">
+                        Django 1.7
+                    </a>
+                </li>
+                <li>
+                    <a href="http://foundation.zurb.com/">
+                        Foundation 5
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.postgresql.org/">
+                        PostgreSQL
+                    </a>
+                </li>
+            </ul>
+        </p>
+        <p>
+            {% blocktrans %}
+                Nous respectons le mieux possible les standarts du web. Ainsi, ce site vous propose un <a href="http://validator.w3.org/check?uri=http%3A%2F%2Fteamnewheaven.fr%2F&charset=%28detect+automatically%29&doctype=Inline&group=0">HTML valide</a>.
+            {% endblocktrans %}
+        </p>
+    </div>
+</div>
+{% endblock %}

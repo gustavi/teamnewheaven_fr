@@ -1,0 +1,72 @@
+{% extends "_base.html" %}
+
+{% load i18n thumbnail %}
+
+
+{% block title %}{% trans "Partenaires et amis" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li class="unavailable">{% trans "Partenaires et amis" %}</li>
+{% endblock %}
+
+
+{% block content %}
+<h1>{% trans "Partenaires et amis" %}</h1>
+<hr>
+<h2 class="text-center">{% trans "Partenaires" %}</h2>
+<hr>
+{% for partner in partners %}
+    <div class="row" style="margin-bottom: 100px;">
+        {% if forloop.counter0|divisibleby:"2" %}
+            <div class="medium-6 columns ">
+                <a href="{{ partner.website }}" target="_blank">
+                    <img src="{{ MEDIA_URL }}{{ partner.avatar }}" >
+                </a>
+            </div>
+            <div class="medium-6 columns text-center">
+                <h3>{{ partner.name }}</h3>
+                <p>
+                    {{ partner.description }}
+                </p>
+            </div>
+        {% else %}
+            <div class="medium-6 columns text-center">
+                <h3>{{ partner.name }}</h3>
+                <p>
+                    {{ partner.description }}
+                </p>
+            </div>
+            <div class="medium-6 columns ">
+                <a href="{{ partner.website }}" target="_blank">
+                    <img src="{{ MEDIA_URL }}{{ partner.avatar }}" >
+                </a>
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}
+{% if friends %}
+    <hr>
+    <h2 class="text-center">{% trans "Amis" %}</h2>
+    <hr>
+    <div class="row">
+        {% for friend in friends %}
+            <div class="medium-6 small-12 columns panel text-center left">
+                <a href="{{ friend.website }}">
+                    <img src="{{ friend.avatar|thumbnail_url:'friend_avatar' }}" alt="{{ friend.name }}">
+                </a>
+                <hr>
+                <a href="{{ friend.website }}">
+                    <h4>{{ friend.name }}</h4>
+                </a>
+                <h6>
+                    <em>{{ friend.description }}</em>
+                </h6>
+            </div>
+            {% if forloop.counter|divisibleby:"2" %}
+                </div><div class="row">
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

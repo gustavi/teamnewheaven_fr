@@ -1,0 +1,44 @@
+{% extends "_base.html" %}
+
+{% load i18n thumbnail %}
+
+
+{% block title %}{% trans "La Team" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li class="unavailable">{% trans "La Team" %}</li>
+{% endblock %}
+
+
+{% block content %}
+<h1>{% trans "Membres" %}</h1>
+<hr>
+<div class="text-center">
+    <a href="{% url 'team-story' %}" class="button secondary ">
+        L'HISTOIRE DE LA TEAM
+    </a>
+</div>
+<hr>
+{% regroup members by group as groups_list %}
+{% for group in groups_list %}
+    <h3>{{ group.grouper }}</h3>
+    <hr>
+    <div class="row">
+        {% for member in group.list %}
+            <div class="large-3 medium-4 small-6 columns panel text-center left">
+                <a href="{% url 'team-member' member.slug %}">
+                    <img src="{{ member.avatar|thumbnail_url:'member_avatar' }}" alt="{{ member.name }}">
+                </a>
+                <hr>
+                <a href="{% url 'team-member' member.slug %}">
+                    <h4>{{ member.name }}</h4>
+                </a>
+                <h6>
+                    <em>{{ member.description }}</em>
+                </h6>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+{% endblock %}

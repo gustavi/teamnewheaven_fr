@@ -1,0 +1,183 @@
+@font-face {
+  font-family: 'bebas_neueregular';
+  src: url('fonts/BebasNeue-webfont.eot');
+  src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/BebasNeue-webfont.woff') format('woff'),
+    url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+    url('fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+  font-family: 'bebas_neueregular';
+}
+
+.top-bar-section ul li > a {
+  font-family: 'bebas_neueregular';
+  letter-spacing: 1.5px;
+}
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}
+
+footer{
+  background: #111;
+  padding: 14px 0px;
+  bottom: 0px;
+  left: 0px;
+  line-height: 1.4em;
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+}
+
+footer a {
+  color: #999;
+}
+
+footer a:hover {
+  color: #999;
+  text-decoration: underline;
+}
+
+#pre-footer {
+  padding-bottom: 120px;
+}
+
+@media only screen and (min-width: 64.063em) {
+  .top-bar-section ul {
+  display: table;
+  margin: 0 auto;
+  }
+  .top-bar-section ul li {
+  display: table-cell;
+  }
+
+  .top-bar-section ul li > a {
+  font-size: 17px;
+  }
+}
+
+#featured {
+  text-align: center;
+}
+
+header {
+  padding: 20px;
+  background-color: #1A1A1A;
+  background-image: url('../img/header_background.png');
+  margin-bottom: 12px;
+}
+
+#cookies-banner {
+  padding: 5px;
+  background: #111;
+}
+
+#cookies-banner span {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 0;
+  color: #EEE;
+}
+
+#cookies-banner button {
+  margin: 0;
+  padding: 0.5rem;
+}
+
+#nojs {
+  padding: 5px;
+  background: #111;
+}
+
+#nojs span {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 0;
+  color: #EEE;
+}
+
+.errorlist {
+  margin-bottom: 10px;
+  margin-left: 0px;
+  list-style-type: none;
+  padding: 0.3em;
+  padding-left: 1em;
+  background-color: #F04124;
+  border-color: #DE2B0F;
+  color: #FFF;
+}
+
+.table-centered {
+  margin: 0 auto;
+  min-width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.table-centered tr th,
+.table-centered tr td {
+  text-align: center;
+}
+
+.panel,
+.panel.callout {
+  background: #fbfbfb;
+}
+.social {
+  text-align: center;
+}
+
+.social i {
+  font-size: 25px;
+}
+
+.panel.social {
+  margin-bottom: 0.8rem;
+  padding: 1rem;
+  border-width: 2px;
+}
+
+.links i {
+  display: block;
+}
+
+.panel.social-youtube { border-color: #DB2625 }
+.social-youtube strong { color: #DB2625 }
+
+.panel.social-twitter { border-color: #3AAAE1 }
+.social-twitter strong { color: #3AAAE1 }
+
+.panel.social-facebook { border-color: #3B579D }
+.social-facebook strong { color: #3B579D }
+
+.panel.social-forums { border-color: #7A7675 }
+.social-forums strong { color: #7A7675 }
+
+.panel.social-rss { border-color: #EC9046 }
+.social-rss strong { color: #EC9046 }
+
+.panel.social-twitch { border-color: #7550BA }
+.social-twitch strong { color: #7550BA }
+
+.panel.social-newsletter { border-color: #E75293 }
+.social-newsletter strong { color: #E75293 }
+
+.panel.social-ask { border-color: #8CC544 }
+.social-ask strong { color: #8CC544 }
+
+.panel.social-paypal { border-color: #0C8DC4 }
+.social-paypal strong { color: #0C8DC4 }
+
+.panel.social-flattr { border-color: #6CBC16 }
+.social-flattr strong { color: #6CBC16 }

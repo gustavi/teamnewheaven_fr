@@ -1,0 +1,60 @@
+{% load staticfiles i18n %}
+
+<noscript>
+    <div id="nojs" class="text-center">
+        <span>
+            {% trans "Pour une utilisation optimale de ce site vous devez activer Javascript." %}
+        </span>
+    </div>
+</noscript>
+<div id="cookies-banner" class="text-center">
+    <span>
+        {% trans "Ce site utilise Google Analytics. En poursuivant votre navigation sur ce site, vous nous autorisez à déposer des cookies à des fins de mesure d'audience." %}
+    </span>
+    <button id="cookies-ok" class="tiny alert">OK</button>
+</div>
+<header>
+    <div id="featured">
+        <a id="top-logo" href="{% url 'homepage' %}">
+            <img alt="slide image" src="{% static "img/logo_top.png" %}">
+        </a>
+    </div>
+</header>
+<div class="row">
+    <div class="large-12 columns">
+        <nav class="top-bar" data-topbar role="navigation">
+            <ul class="title-area">
+                <li class="name"></li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+            </ul>
+            <section class="top-bar-section">
+                <ul>
+                    <li>
+                        <a href="{% url 'homepage' %}">{% trans "Accueil" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'zinnia:entry_archive_index' %}">{% trans "Blog" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact-index' %}">{% trans "Contact" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'partners-list' %}">{% trans "Partenaires" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'team-list' %}">{% trans "La Team" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'gallery-index' %}">{% trans "Galerie" %}</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'download-index' %}">{% trans "Téléchargements" %}</a>
+                    </li>
+                    <li>
+                        <a href="{{ TNH.forum.url }}">{% trans "Forum" %}</a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+</div>

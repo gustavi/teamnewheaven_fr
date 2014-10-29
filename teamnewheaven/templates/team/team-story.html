@@ -1,0 +1,94 @@
+{% extends "_base.html" %}
+
+{% load i18n staticfiles %}
+
+
+{% block title %}{% trans "L'histoire de la Team" %} &#183; {% trans "La Team" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li><a href="{% url 'team-list' %}">La Team</a></li>
+<li class="unavailable">L'histoire de la Team</li>
+{% endblock %}
+
+
+{% block extracss %}
+<link rel="stylesheet" href="{% static "css/tnh_story.css" %}">
+{% endblock %}
+
+
+{% block content %}
+<h1 class="text-center">L'histoire de la Team</h1>
+<hr>
+<div class="path-container">
+    <span class="line line-top hide-for-small"></span>
+    {% for year in events_years %}
+        <div class="row path-item">
+            <div class="large-7 push-5 columns">
+                <div class="circle circle-left ">
+                    <div class="circle-year">{{ year.year }}</div>
+                </div>
+            </div>
+        </div>
+        {% if year.fake_start %}
+            <span class="line line-fake-top line-fake-year hide-for-small"></span>
+            <span class="line line-fake-bottom hide-for-small"></span>
+        {% else %}
+            <span class="line line-half hide-for-small"></span>
+        {% endif %}
+        {% for month in year.months %}
+            <div class="row path-item">
+                {% for event in month.events %}
+                    {% if event.left %}
+                        <div class="large-5 columns path-text left">
+                            <h3 class="text-right">{{ event.name }}</h3>
+                            <p class="text-right">{{ event.description|safe }}</p>
+                        </div>
+                    {% elif not event.left and month.events|length == 1 %}
+                        <div class="large-5 columns">
+                            <p></p>
+                        </div>
+                    {% endif %}
+                    {% if not forloop.first and month.events|length > 1 or month.events|length == 1 %}
+                        <div class="large-2 columns">
+                            <div class="circle-small circle-center center">
+                                <div class="circle-month">{{ month.month_name }}</div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if not event.left %}
+                        <div class="large-5 columns path-text right">
+                            <h3>{{ event.name }}</h3>
+                            <p>{{ event.description|safe }}</p>
+                        </div>
+                    {% else %}
+                        <div class="large-5 columns">
+                            <p></p>
+                        </div>
+                    {% endif %}
+                    {% if forloop.last and not event.fake %}
+                        {% if year.fake_end and forloop.parentloop.last %}
+                            <span class="line line-fake-top hide-for-small"></span>
+                            <span class="line line-fake-bottom hide-for-small"></span>
+                        {% else %}
+                            <span class="line hide-for-small"></span>
+                        {% endif %}
+                    {% endif %}
+                    {% if event.fake %}
+                        <span class="line line-fake-top hide-for-small"></span>
+                        <span class="line line-fake-bottom hide-for-small"></span>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endfor %}
+    <div class="row path-item">
+        <div class="large-7 push-5 columns">
+            <div class="circle circle-left ">
+                <div class="circle-year circle-end">À SUIVRE<br/>...</div>
+            </div>
+        </div>
+    </div>
+    <span class="line line-fake-top line-fake-year hide-for-small"></span>
+</div>
+{% endblock %}

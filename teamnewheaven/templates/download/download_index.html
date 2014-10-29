@@ -1,0 +1,56 @@
+{% extends "_base.html" %}
+
+{% load i18n %}
+
+
+{% block title %}{% trans "Téléchargements" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li class="unavailable">{% trans "Téléchargements" %}</li>
+{% endblock %}
+
+
+{% block content %}
+{% if items %}
+    {% regroup items by liste as liste_list %}
+    {% for liste in liste_list %}
+        <h3>{{ liste.grouper.name }} <small>{{ liste.grouper.description }}</small></h3>
+        <table class="table-centered">
+            <thead>
+                <tr>
+                    <th>{% trans "Nom" %}</th>
+                    <th class="show-for-large-up">{% trans "Ajouté le" %}</th>
+                    <th class="show-for-medium-up">{% trans "Taille" %}</th>
+                    <th class="show-for-medium-up">{% trans "Téléchargements" %}</th>
+                    <th>{% trans "Lien" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in liste.list %}
+                    <tr>
+                        <td class="text-left">
+                            {% if item.date > month %}
+                                <span class="label success">{% trans "nouveau" %}</span>
+                            {% endif %}
+                            {{ item.name }}
+                        </td>
+                        <td class="show-for-large-up">{{ item.date|date:'j F Y' }}</td>
+                        <td class="show-for-medium-up">{{ item.item.size|filesizeformat }}</td>
+                        <td class="show-for-medium-up">{{ item.downloads }}</td>
+                        <td>
+                            <a href="{{ item.get_link_url }}">
+                                <i class="fi-download label radius alert"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
+{% else %}
+    <p>
+        {% trans "Aucun téléchargement pour le moment." %}
+    </p>
+{% endif %}
+{% endblock %}

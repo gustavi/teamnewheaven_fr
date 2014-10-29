@@ -1,0 +1,167 @@
+{% extends "_base.html" %}
+
+{% load i18n thumbnail zinnia %}
+
+
+{% block title %}{% trans "Accueil" %}{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="large-12 columns">
+        <div class="panel radius">
+            <div class="row">
+                <h3 class="text-center">{% trans "Dernières vidéos" %}</h3>
+                <hr>
+                {% for video in videos %}
+                    {% if forloop.first %}
+                        <h1 class="text-center"><small>{{ video.name }}</small></h1>
+                        <div class="small-12 columns">
+                            <div class="flex-video widescreen vimeo" style="display: block;">
+                                <iframe
+                                    width="1280"
+                                    height="720"
+                                    src="http://www.youtube-nocookie.com/embed/{{ video.key }}?rel=0"
+                                    data-src="http://www.youtube-nocookie.com/embed/{{ video.key }}?rel=0"
+                                ></iframe>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="medium-4 small-12 columns">
+                            <a href="#" data-reveal-id="myModal{{ video.key }}">
+                                <img src="https://i.ytimg.com/vi/{{ video.key }}/hqdefault.jpg" alt="{{ video.name }}" style="width: 100%">
+                            </a>
+                        </div>
+                        <div id="myModal{{ video.key }}" class="reveal-modal" data-reveal>
+                            <h2 class="text-center">{{ video.name }}</h2>
+                            <div class="flex-video widescreen vimeo" style="display: block;">
+                                <iframe
+                                    width="1280"
+                                    height="720"
+                                    src="http://www.youtube-nocookie.com/embed/{{ video.key }}?rel=0"
+                                    data-src="http://www.youtube-nocookie.com/embed/{{ video.key }}?rel=0"
+                                ></iframe>
+                            </div>
+                            <a class="close-reveal-modal">&#215;</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    {% get_recent_entries 2 template="pages/recent_entries.html" %}
+    <div class="large-4 columns">
+        <div class="panel radius">
+            <h3 class="text-center">{% trans "Suivez nous !" %}</h3>
+            <hr>
+            <a href="https://www.youtube.com/user/NewHeavenMC" target="_blank">
+                <div class="panel radius callout social social-youtube">
+                    <strong><i class="fi-social-youtube"></i> Youtube</strong>
+                </div>
+            </a>
+            <a href="https://twitter.com/newheavenmc" target="_blank">
+                <div class="panel radius callout social social-twitter">
+                    <strong><i class="fi-social-twitter"></i> Twitter</strong>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/NewHeavenMinecraft" target="_blank">
+                <div class="panel radius callout social social-facebook">
+                    <strong><i class="fi-social-facebook"></i> Facebook</strong>
+                </div>
+            </a>
+            <a href="http://forum.teamnewheaven.com" target="_blank">
+                <div class="panel radius callout social social-forums">
+                    <strong><i class="fi-torsos-all"></i> Forums</strong>
+                </div>
+            </a>
+            <a href="{% url 'zinnia:entry_latest_feed' %}" target="_blank">
+                <div class="panel radius callout social social-rss">
+                    <strong><i class="fi-rss"></i> RSS</strong>
+                </div>
+            </a>
+            <a href="http://www.twitch.tv/newheavenmc" target="_blank">
+                <div class="panel radius callout social social-twitch">
+                    <strong><i class="fi-video"></i> Twitch</strong>
+                </div>
+            </a>
+            <a href="http://ask.fm/newheavenmc/" target="_blank">
+                <div class="panel radius callout social social-ask">
+                    <strong><i class="fi-sound"></i> Ask</strong>
+                </div>
+            </a>
+            <a href="#" data-reveal-id="newsletterModal" target="_blank">
+                <div class="panel radius callout social social-newsletter">
+                    <strong><i class="fi-mail"></i> {% trans "Newsletter" %}</strong>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="newsletterModal" class="reveal-modal small" data-reveal>
+    <h2 class="text-center">{% trans "S'abonner à notre newsletter" %}</h2>
+    <p>
+        {% trans "Pour vous tenir informé de l'actualité de la Team NewHeaven, vous pouvez vous abonner à notre newsletter." %}
+    </p>
+    <div id="newsletterError"></div>
+    <form id="newsletterForm" action="{% url 'newsletter-subscribe' %}" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>{% trans "Newsletter" %}</legend>
+            <input type="hidden" name="next" value="">
+            <label>
+                {% trans "Adresse mail" %}
+                <input name="email" type="email">
+            </label>
+            <div class="text-center">
+                <button id="newsletterSubmit" class="medium button success">
+                    {% trans "M'abonner à la newsletter" %}
+                </button>
+            </div>
+        </fieldset>
+    </form>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="newsletterResultModal" class="reveal-modal small" data-reveal>
+    <h2 class="text-center">{% trans "S'abonner à notre newsletter" %}</h2>
+    <p>
+        {% trans "Vous êtes maintenant abonné à notre newsletter !" %}
+    </p>
+    <div class="text-center">
+        <button id="newsletterResultModalClose" class="medium button alert">
+            {% trans "Fermer" %}
+        </button>
+    </div>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+{% endblock %}
+
+
+{% block extrascripts %}
+<script>
+    $( "#newsletterForm" ).submit(function( event ) {
+        event.preventDefault();
+        var $form = $( this ),
+        csrfmiddlewaretoken = $form.find( "input[name='csrfmiddlewaretoken']" ).val(),
+        email = $form.find( "input[name='email']" ).val(),
+        url = $form.attr( "action" );
+        $.ajax({
+            type: "POST",
+            url: url,
+            data: { csrfmiddlewaretoken: csrfmiddlewaretoken, email: email }
+        })
+        .done(function( msg ) {
+            if ( msg == 'success' ) {
+                $('#newsletterModal').foundation('reveal', 'close');
+                $('#newsletterResultModal').foundation('reveal', 'open');
+            } else {
+                $( "#newsletterError" ).empty().append('<div data-alert class="alert-box alert">{% trans "Cette adresse email est déjà abonnée à notre newsletter" %}<a href="#" class="close">&times;</a> </div>');
+            }
+        })
+    });
+    $( "#newsletterResultModalClose" ).click(function() {
+        $('#newsletterResultModal').foundation('reveal', 'close');
+    });
+</script>
+{% endblock %}

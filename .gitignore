@@ -1,0 +1,8 @@
+__pycache__/
+*.log
+*.pot
+*~
+db.sqlite3
+media/
+*.mo
+*.pyc

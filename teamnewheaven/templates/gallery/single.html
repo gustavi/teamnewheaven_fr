@@ -1,0 +1,52 @@
+{% extends "_base.html" %}
+
+{% load i18n thumbnail %}
+
+
+{% block title %}{{ category }} &#183; {% trans "Galerie" %}{% endblock %}
+
+
+{% block breadcrumb %}
+<li><a href="{% url 'gallery-index' %}">{% trans "Galerie" %}</a></li>
+<li class="unavailable">{{ category }}</li>
+{% endblock %}
+
+
+{% block content %}
+<h1>{{ category }}</h1>
+<hr>
+<h2 id="videos">{% trans "Vidéos" %}</h2>
+{% for video in videos %}
+    <div class="medium-4 small-12 columns">
+        <a href="#" data-reveal-id="myModal{{ video.key }}">
+            <img src="https://i.ytimg.com/vi/{{ video.key }}/hqdefault.jpg" alt="{{ video.name }}" style="width: 100%">
+        </a>
+    </div>
+    <div id="myModal{{ video.key }}" class="reveal-modal" data-reveal>
+        <h2 class="text-center">{{ video.name }}</h2>
+        <div class="flex-video widescreen vimeo" style="display: block;">
+            <iframe
+                width="1280"
+                height="720"
+                src="http://www.youtube-nocookie.com/embed/{{ video.key }}?rel=0"
+                frameborder="0"
+                data-src="http://www.youtube-nocookie.com/embed/{{ video.key }}?rel=0"
+            ></iframe>
+        </div>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+{% empty %}
+    <p>{% trans "Pas de vidéo dans cette galerie." %}</p>
+{% endfor %}
+<hr>
+<h2 id="images">{% trans "Images" %}</h2>
+{% for image in images %}
+    <div class="large-3 medium-6 small-12 columns left" style="margin-bottom: 20px">
+        <a href="{{ image.image.url }}">
+            <img src="{{ image.image|thumbnail_url:'gallery_index' }}">
+        </a>
+    </div>
+{% empty %}
+    <p>{% trans "Pas d'image dans cette galerie." %}</p>
+{% endfor %}
+{% endblock %}
