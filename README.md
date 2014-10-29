@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gustavi/teamnewheaven_fr.svg)](https://travis-ci.org/gustavi/teamnewheaven_fr)
+
 # Team NewHeaven Website
 
 Team NewHeaven website is the official website of the french minecraft team

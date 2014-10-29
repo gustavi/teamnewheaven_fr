@@ -1,0 +1,32 @@
+git:
+  depth: 1
+
+language: python
+
+python:
+  - 3.3
+
+notifications:
+  irc:
+    channels:
+      - irc.freenode.net##gustavi
+    skip_join: true
+
+cache:
+  - apt
+
+install:
+  # APT Stuff
+  - sudo apt-get update
+  - sudo apt-get install unzip
+
+  # Python dependencies
+  - travis_retry pip install -r requirements.txt
+  - travis_retry pip install coveralls
+
+script:
+  - coverage run --source='.' manage.py test
+  - flake8 --exclude=migrations,urls.py,settings.py teamnewheaven
+
+after_success:
+  - coveralls
