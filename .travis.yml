@@ -25,7 +25,9 @@ script:
   # fix zinnia django 1.7  
   - wget -c https://github.com/Fantomas42/django-blog-zinnia/archive/feature/django-1.7.zip
   - unzip django-1.7.zip
-  - python django-blog-zinnia-feature-django-1.7/setup.py install
+  - cd 
+  - python setup.py install
+  - cd ..
 
   - coverage run --source='.' teamnewheaven/manage.py test
   - flake8 --exclude=migrations,urls.py,settings.py teamnewheaven
