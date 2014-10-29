@@ -22,8 +22,7 @@ install:
   - travis_retry pip install -r requirements.txt
 
 script:
-  - cd teamnewheaven
-  - coverage run --source='.' manage.py test
+  - coverage run --source='.' teamnewheaven/manage.py test
   - flake8 --exclude=migrations,urls.py,settings.py teamnewheaven
 
 after_success:
