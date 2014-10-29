@@ -25,8 +25,9 @@ the [Python](http://python.org/) programming language in version 3.
 All the python dependencies for website are listed in the file `requirements.txt`
 in the source repository. From the main directory, simply run
 
-    :::console
-    (venv)$ pip install --upgrade -r requirements.txt
+```
+$ pip install --upgrade -r requirements.txt
+```
 
 (This will install the full Django framework and a few separate modules, so it
 may take some time.)
