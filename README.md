@@ -22,33 +22,31 @@ Guide](http://www.python.org/dev/peps/pep-0008/) is a good base.
 The website uses [Django](https://www.djangoproject.com/), a web framework for
 the [Python](http://python.org/) programming language in version 3.
 
-### Basic dependencies (system-dependent)
-
-You should install Python 3, and the
-[pip](http://www.pip-installer.org/en/latest/) package manager. See your 
-distribution documentation for more informations.
-
-### Virtual python environment (virtualenv)
-
-The `virtualenv` tool is designed to avoid problem with incompatible Python
-versions or conflicting package requirements between distinct projects. It
-allows to set up per-project local environments, setting a preferred version of
-Python, and installing dependencies locally. To install `virtualenv`, simply
-run
-
-    :::console
-    $ pip install --user virtualenv
-
-For utilisation see the [Official documentation](http://www.virtualenv.org/) or 
-[this tutorial](http://sametmax.com/les-environnement-virtuels-python-virtualen
-v-et-virtualenvwrapper/) in french.
-
-
 All the python dependencies for website are listed in the file `requirements.txt`
-in the source repository. From the PDP directory, simply run
+in the source repository. From the main directory, simply run
 
     :::console
-    (venv)$ pip install -r requirements.txt
+    (venv)$ pip install --upgrade -r requirements.txt
 
 (This will install the full Django framework and a few separate modules, so it
 may take some time.)
+
+## Licence
+
+Team NewHeaven Website
+Copyright (c) 2014 Team NewHeaven
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+See the COPYING file.
