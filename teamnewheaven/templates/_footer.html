@@ -5,9 +5,7 @@
     <div>
         &copy; 2014 TeamNewHeaven.fr
         <br/>
-        {% blocktrans %}
-            Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>
-        {% endblocktrans %}
+        {% blocktrans %}Contenu sous licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>{% endblocktrans %}
         <br/>
         <a href="{% url 'pages-legals' %}">
             {% trans "Mentions légales" %}
@@ -17,8 +15,6 @@
             {% trans "Version :" %} {{ TAG }} / {{ REVISION }}
         </a>
         <br/>
-        {% blocktrans %}
-            Développé en <a href="http://djangoproject.com">Django</a> par <a href="http://www.gustavi.net?ref=teamnewheaven">Gustavi</a>
-        {% endblocktrans %}
+        {% blocktrans %}Développé en <a href="http://djangoproject.com">Django</a> par <a href="http://www.gustavi.net?ref=teamnewheaven">Gustavi</a>{% endblocktrans %}
     </div>
 </footer>

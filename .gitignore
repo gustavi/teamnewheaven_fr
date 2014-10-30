@@ -7,3 +7,4 @@ media/
 *.mo
 *.pyc
 *.coverage
+*settings_prod.py

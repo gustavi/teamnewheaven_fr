@@ -1,0 +1,570 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-30 11:24+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: contact/forms.py:39
+msgid "Message (4000 caractères max)"
+msgstr ""
+
+#: teamnewheaven/settings.py:139
+msgid "Français"
+msgstr ""
+
+#: teamnewheaven/settings.py:140
+msgid "Anglais"
+msgstr ""
+
+#: templates/_base.html:28 templates/_header.html:33
+#: templates/pages/index.html:6 templates/zinnia/skeleton.html:48
+msgid "Accueil"
+msgstr ""
+
+#: templates/_footer.html:8
+msgid ""
+"Contenu sous licence <a href=\"https://creativecommons.org/licenses/by-"
+"sa/4.0/deed.fr\">CC BY-SA 4.0</a>"
+msgstr ""
+
+#: templates/_footer.html:11 templates/pages/legals.html:6
+#: templates/pages/legals.html.py:12
+msgid "Mentions légales"
+msgstr ""
+
+#: templates/_footer.html:13 templates/pages/about.html:6
+#: templates/pages/about.html.py:13
+msgid "À propos"
+msgstr ""
+
+#: templates/_footer.html:15
+msgid "Version :"
+msgstr ""
+
+#: templates/_footer.html:18
+msgid ""
+"Développé en <a href=\"http://djangoproject.com\">Django</a> par <a href="
+"\"http://www.gustavi.net?ref=teamnewheaven\">Gustavi</a>"
+msgstr ""
+
+#: templates/_header.html:6
+msgid "Pour une utilisation optimale de ce site vous devez activer Javascript."
+msgstr ""
+
+#: templates/_header.html:12
+msgid ""
+"Ce site utilise Google Analytics. En poursuivant votre navigation sur ce "
+"site, vous nous autorisez à déposer des cookies à des fins de mesure "
+"d'audience."
+msgstr ""
+
+#: templates/_header.html:36
+msgid "Blog"
+msgstr ""
+
+#: templates/_header.html:39 templates/contact/contact-index.html:6
+#: templates/contact/contact-index.html:10
+#: templates/contact/contact-index.html:15
+msgid "Contact"
+msgstr ""
+
+#: templates/_header.html:42 templates/partners/partners-list.html:17
+msgid "Partenaires"
+msgstr ""
+
+#: templates/_header.html:45 templates/team/team-list.html:6
+#: templates/team/team-list.html.py:10 templates/team/team-member.html:6
+#: templates/team/team-member.html.py:10 templates/team/team-story.html:6
+msgid "La Team"
+msgstr ""
+
+#: templates/_header.html:48 templates/gallery/index.html:6
+#: templates/gallery/index.html.py:10 templates/gallery/index.html:15
+#: templates/gallery/single.html:6 templates/gallery/single.html.py:10
+msgid "Galerie"
+msgstr ""
+
+#: templates/_header.html:51 templates/download/download_index.html:6
+#: templates/download/download_index.html:10
+#: templates/download/download_index.html:25
+msgid "Téléchargements"
+msgstr ""
+
+#: templates/_header.html:54
+msgid "Forum"
+msgstr ""
+
+#: templates/_links.html:11
+msgid "Liens"
+msgstr ""
+
+#: templates/_links.html:16
+msgid "Vidéos sur Youtube"
+msgstr ""
+
+#: templates/_links.html:23
+msgid "Faire un don Paypal"
+msgstr ""
+
+#: templates/_links.html:30
+msgid "Flattrer ce contenu"
+msgstr ""
+
+#: templates/_links.html:37
+msgid "Twitter avec nous"
+msgstr ""
+
+#: templates/_links.html:44
+msgid "Notre page Facebook"
+msgstr ""
+
+#: templates/_links.html:51
+msgid "Suivre notre blog"
+msgstr ""
+
+#: templates/_links.html:58
+msgid "Nous retrouver sur les forums de la Team NewHeaven"
+msgstr ""
+
+#: templates/contact/contact-index.html:19
+msgid ""
+"Votre message a bien été envoyé. Nous prendrons contact avec vous dans les "
+"plus brefs délais."
+msgstr ""
+
+#: templates/contact/contact-index.html:23
+#, python-format
+msgid ""
+"Pour toute demande de candidature merci d'utiliser le <b><a href="
+"\"%(application_url)s\" style=\"color: #fff; text-decoration:underline;"
+"\">forum dédié à cela</a></b>. Toute candidature par ce formulaire sera "
+"<b>ignorée</b>."
+msgstr ""
+
+#: templates/contact/contact-index.html:28
+msgid "Informations personelles"
+msgstr ""
+
+#: templates/contact/contact-index.html:31
+msgid "Prénom"
+msgstr ""
+
+#: templates/contact/contact-index.html:31
+#: templates/contact/contact-index.html:42
+#: templates/contact/contact-index.html:53
+msgid "Obligatoire"
+msgstr ""
+
+#: templates/contact/contact-index.html:42
+#: templates/download/download_index.html:22
+msgid "Nom"
+msgstr ""
+
+#: templates/contact/contact-index.html:53
+msgid "Addresse mail"
+msgstr ""
+
+#: templates/contact/contact-index.html:64 templates/pages/index.html:119
+msgid "M'abonner à la newsletter"
+msgstr ""
+
+#: templates/contact/contact-index.html:78
+msgid "Message"
+msgstr ""
+
+#: templates/contact/contact-index.html:85
+msgid "Captcha"
+msgstr ""
+
+#: templates/contact/contact-index.html:87
+msgid ""
+"Afin de vérifier que vous n'êtes pas un robot, merci de rentrer la captcha "
+"suivant."
+msgstr ""
+
+#: templates/contact/contact-index.html:95
+msgid "Envoyer"
+msgstr ""
+
+#: templates/download/download_index.html:23
+msgid "Ajouté le"
+msgstr ""
+
+#: templates/download/download_index.html:24
+msgid "Taille"
+msgstr ""
+
+#: templates/download/download_index.html:26
+msgid "Lien"
+msgstr ""
+
+#: templates/download/download_index.html:34
+msgid "nouveau"
+msgstr ""
+
+#: templates/download/download_index.html:53
+msgid "Aucun téléchargement pour le moment."
+msgstr ""
+
+#: templates/gallery/single.html:18
+msgid "Vidéos"
+msgstr ""
+
+#: templates/gallery/single.html:39
+msgid "Pas de vidéo dans cette galerie."
+msgstr ""
+
+#: templates/gallery/single.html:42
+msgid "Images"
+msgstr ""
+
+#: templates/gallery/single.html:50
+msgid "Pas d'image dans cette galerie."
+msgstr ""
+
+#: templates/newsletter/newsletter/management.html:5
+#: templates/newsletter/newsletter/management.html:17
+msgid "Me désabonner de la newsletter"
+msgstr ""
+
+#: templates/pages/about.html:14
+msgid "Réalisation"
+msgstr ""
+
+#: templates/pages/about.html:18
+msgid "Informations techniques"
+msgstr ""
+
+#: templates/pages/about.html:20
+msgid "Ce site est propulsé par les outils suivants :"
+msgstr ""
+
+#: templates/pages/about.html:45
+#, python-format
+msgid ""
+"Nous respectons le mieux possible les standarts du web. Ainsi, ce site vous "
+"propose un <a href=\"http://validator.w3.org/check?uri=http%%3A%%2F"
+"%%2Fteamnewheaven.fr%%2F&charset=%%28detect+automatically"
+"%%29&doctype=Inline&group=0\">HTML valide</a>."
+msgstr ""
+
+#: templates/pages/index.html:14
+msgid "Dernières vidéos"
+msgstr ""
+
+#: templates/pages/index.html:57
+msgid "Suivez nous !"
+msgstr ""
+
+#: templates/pages/index.html:96 templates/pages/index.html.py:111
+msgid "Newsletter"
+msgstr ""
+
+#: templates/pages/index.html:103 templates/pages/index.html.py:127
+msgid "S'abonner à notre newsletter"
+msgstr ""
+
+#: templates/pages/index.html:105
+msgid ""
+"Pour vous tenir informé de l'actualité de la Team NewHeaven, vous pouvez "
+"vous abonner à notre newsletter."
+msgstr ""
+
+#: templates/pages/index.html:114
+msgid "Adresse mail"
+msgstr ""
+
+#: templates/pages/index.html:129
+msgid "Vous êtes maintenant abonné à notre newsletter !"
+msgstr ""
+
+#: templates/pages/index.html:133
+msgid "Fermer"
+msgstr ""
+
+#: templates/pages/index.html:159
+msgid "Cette adresse email est déjà abonnée à notre newsletter"
+msgstr ""
+
+#: templates/pages/legals.html:13
+msgid "Éditeur"
+msgstr ""
+
+#: templates/pages/legals.html:14
+msgid "<b>Team NewHeaven</b>"
+msgstr ""
+
+#: templates/pages/legals.html:15
+msgid "Directeur de la publication"
+msgstr ""
+
+#: templates/pages/legals.html:17
+msgid "Monsieur PERRIN Jonathan"
+msgstr ""
+
+#: templates/pages/legals.html:19
+msgid "Hébergeur"
+msgstr ""
+
+#: templates/pages/legals.html:32
+msgid "INFORMATIQUE ET LIBERTÉS"
+msgstr ""
+
+#: templates/pages/legals.html:33
+msgid "Informations personnelles collectées"
+msgstr ""
+
+#: templates/pages/legals.html:35
+msgid ""
+"En France, les données personnelles sont notamment protégées par la <a href="
+"\"http://www.legifrance.gouv.fr/affichTexte.do?"
+"cidTexte=JORFTEXT000000886460\">loi no 78-17 du 6 janvier 1978</a>, la <a "
+"href=\"http://www.legifrance.gouv.fr/affichTexte.do?"
+"cidTexte=JORFTEXT000000441676\">loi no 2004-801 du 6 août 2004</a>, l'<a "
+"href=\"http://www.legifrance.gouv.fr/affichCodeArticle.do?"
+"idArticle=LEGIARTI000006417945&cidTexte=LEGITEXT000006070719\">article L. "
+"226-13 du Code pénal</a> et la <a href=\"http://europa.eu/"
+"legislation_summaries/information_society/data_protection/l14012_fr.htm"
+"\">Directive Européenne du 24 octobre 1995</a>."
+msgstr ""
+
+#: templates/pages/legals.html:38
+msgid ""
+"En tout état de cause <b>Team NewHeaven</b> ne collecte des informations "
+"personnelles relatives à l'utilisateur (nom, adresse électronique, "
+"coordonnées téléphoniques) que pour le besoin des services proposés par les "
+"sites du réseau <b>Team NewHeaven</b> pour des traitements statistiques. "
+"L'utilisateur fournit ces informations en toute connaissance de cause, "
+"notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé "
+"à l'utilisateur des sites du réseau <b>Team NewHeaven</b> le caractère "
+"obligatoire ou non des informations qu'il serait amené à fournir."
+msgstr ""
+
+#: templates/pages/legals.html:40
+msgid ">Rectification des informations nominatives collectées"
+msgstr ""
+
+#: templates/pages/legals.html:42
+msgid ""
+" Conformément aux dispositions de l'<a href=\"http://www.legifrance.gouv.fr/"
+"affichTexte.do?cidTexte=JORFTEXT000000886460#LEGIARTI000006528132\">article "
+"34 de la loi no 48-87 du 6 janvier 1978</a>, l'utilisateur dispose d'un "
+"droit de modification des données nominatives collectées le concernant. Pour "
+"ce faire, l'utilisateur envoie à <b>Team NewHeaven</b> un courrier "
+"électronique en utilisant le formulaire de contact ou un courrier à "
+"l'adresse du siège social (indiquée ci-dessus) en indiquant son nom ou sa "
+"raison sociale, ses coordonnées physiques et/ou électroniques, ainsi que le "
+"cas échéant la référence dont il disposerait en tant qu'utilisateur du site "
+"<b>Team NewHeaven</b>."
+msgstr ""
+
+#: templates/pages/legals.html:45
+msgid ""
+"La modification interviendra dans des délais raisonnables à compter de la "
+"réception de la demande de l'utilisateur."
+msgstr ""
+
+#: templates/pages/legals.html:47
+msgid "LIMITATION DE RESPONSABILITÉ"
+msgstr ""
+
+#: templates/pages/legals.html:49
+msgid ""
+"Ce site comporte des informations mises à disposition par des sociétés "
+"externes ou des liens hypertextes vers d'autres sites qui n'ont pas été "
+"développés par le <b>Team NewHeaven</b>. Le contenu mis à disposition sur le "
+"Site est fourni à titre informatif. L'existence d'un lien de ce site vers un "
+"autre site ne constitue pas une validation de ce site ou de son contenu. Il "
+"appartient à l'internaute d'utiliser ces informations avec discernement et "
+"esprit critique. La responsabilité de <b>Team NewHeaven</b> ne saurait être "
+"engagée du fait des informations, opinions et recommandations formulées par "
+"des tiers."
+msgstr ""
+
+#: templates/pages/legals.html:52
+msgid ""
+"<b>Team NewHeaven</b> ne pourra être tenue responsable des dommages directs "
+"et indirects causés au matériel de l'utilisateur, lors de l'accès au site, "
+"et résultant soit de l'utilisation d'un matériel ne répondant pas aux "
+"spécifications techniques requises, soit de l'apparition d'un bug ou d'une "
+"incompatibilité."
+msgstr ""
+
+#: templates/pages/legals.html:55
+msgid ""
+"<b>Team NewHeaven</b> ne pourra également être tenue responsable des "
+"dommages indirects (tels par exemple qu'une perte de marché ou perte d'une "
+"chance) consécutifs à l'utilisation du site."
+msgstr ""
+
+#: templates/pages/legals.html:58
+msgid ""
+"<b>Team NewHeaven</b> ne pourra être tenue responsable de dommages matériels "
+"liés à l'utilisation du site. De plus, l'utilisateur du site s'engage à "
+"accéder au site en utilisant un matériel récent, ne contenant pas de virus "
+"et avec un navigateur de dernière génération mis-à-jour."
+msgstr ""
+
+#: templates/pages/legals.html:61
+msgid "Ces mentions légales sont succeptibles d'être modifiées."
+msgstr ""
+
+#: templates/pages/legals.html:64
+msgid "Dernière modification le vendredi 24 octobre 2014."
+msgstr ""
+
+#: templates/pages/recent_entries.html:5
+msgid "Dernières news"
+msgstr ""
+
+#: templates/pages/recent_entries.html:27
+msgid "Continue reading"
+msgstr ""
+
+#: templates/pages/recent_entries.html:34
+msgid "No entries yet."
+msgstr ""
+
+#: templates/pages/recent_entries.html:38
+msgid "Toutes les news"
+msgstr ""
+
+#: templates/partners/partners-list.html:6
+#: templates/partners/partners-list.html:10
+#: templates/partners/partners-list.html:15
+msgid "Partenaires et amis"
+msgstr ""
+
+#: templates/partners/partners-list.html:50
+msgid "Amis"
+msgstr ""
+
+#: templates/team/team-list.html:15
+msgid "Membres"
+msgstr ""
+
+#: templates/team/team-member.html:29
+msgid "Biographie"
+msgstr ""
+
+#: templates/team/team-member.html:33
+msgid "Biographie à venir."
+msgstr ""
+
+#: templates/team/team-member.html:36
+msgid "Social"
+msgstr ""
+
+#: templates/team/team-member.html:38
+msgid "Twitter"
+msgstr ""
+
+#: templates/team/team-member.html:42
+msgid "Site web"
+msgstr ""
+
+#: templates/team/team-story.html:6
+msgid "L'histoire de la Team"
+msgstr ""
+
+#: templates/zinnia/base.html:15
+msgid "RSS Feed of latest entries"
+msgstr ""
+
+#: templates/zinnia/base.html:16
+msgid "RSS Feed of latest discussions"
+msgstr ""
+
+#: templates/zinnia/base.html:26
+msgid "Welcome!"
+msgstr ""
+
+#: templates/zinnia/base.html:30
+msgid "Categories"
+msgstr ""
+
+#: templates/zinnia/base.html:35
+msgid "Authors"
+msgstr ""
+
+#: templates/zinnia/base.html:40
+msgid "Calendar"
+msgstr ""
+
+#: templates/zinnia/base.html:45
+msgid "Tags"
+msgstr ""
+
+#: templates/zinnia/base.html:50
+msgid "Recent entries"
+msgstr ""
+
+#: templates/zinnia/base.html:55
+msgid "Recent comments"
+msgstr ""
+
+#: templates/zinnia/base.html:60
+msgid "Recent linkbacks"
+msgstr ""
+
+#: templates/zinnia/base.html:65
+msgid "Random entries"
+msgstr ""
+
+#: templates/zinnia/base.html:70
+msgid "Popular entries"
+msgstr ""
+
+#: templates/zinnia/base.html:75
+msgid "Archives"
+msgstr ""
+
+#: templates/zinnia/base.html:81
+msgid "Tools"
+msgstr ""
+
+#: templates/zinnia/base.html:85 templates/zinnia/base.html.py:87
+msgid "Dashboard"
+msgstr ""
+
+#: templates/zinnia/base.html:93 templates/zinnia/base.html.py:95
+msgid "Post an entry"
+msgstr ""
+
+#: templates/zinnia/base.html:102 templates/zinnia/base.html.py:104
+msgid "Log out"
+msgstr ""
+
+#: templates/zinnia/skeleton.html:5 templates/zinnia/skeleton.html.py:11
+#: templates/zinnia/skeleton.html:55
+msgid "Blog de la Team NewHeaven"
+msgstr ""
+
+#: templates/zinnia/skeleton.html:64
+msgid "Useful links"
+msgstr ""
+
+#: templates/zinnia/skeleton.html:67 templates/zinnia/skeleton.html.py:68
+msgid "Weblog index"
+msgstr ""
+
+#: templates/zinnia/skeleton.html:72 templates/zinnia/skeleton.html.py:73
+msgid "Sitemap"
+msgstr ""
+
+#: templates/zinnia/skeleton.html:79
+msgid "Search"
+msgstr ""

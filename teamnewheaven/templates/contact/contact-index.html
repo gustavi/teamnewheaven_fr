@@ -20,9 +20,7 @@
     </div>
 {% endif %}
 <div class="alert-box alert">
-    {% blocktrans with application_url=TNH.forum.application %}
-        Pour toute demande de candidature merci d'utiliser le <b><a href="{{ application_url }}" style="color: #fff; text-decoration:underline;">forum dédié à cela</a></b>. Toute candidature par ce formulaire sera <b>ignorée</b>.
-    {% endblocktrans %}
+    {% blocktrans with application_url=TNH.forum.application %}Pour toute demande de candidature merci d'utiliser le <b><a href="{{ application_url }}" style="color: #fff; text-decoration:underline;">forum dédié à cela</a></b>. Toute candidature par ce formulaire sera <b>ignorée</b>.{% endblocktrans %}
 </div>
 <form action="{% url 'contact-index' %}" method="post" role="form" id="form-contact">
     {% csrf_token %}
